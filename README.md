@@ -1,6 +1,6 @@
 # Instagram-followers-scraper
 Script that returns a JSON file of Instagram followers for specified inputs.  
-*The program is slow since Instagrams website has a limited number of requests and therefore it sometimes needs to wait an hour to keep running*  
+*The program is slow since [instagram.com](https://www.instagram.com/) has a limited number of requests and therefore it sometimes needs to wait an hour to keep running*  
 
 Requirements: [selenium module](http://selenium-python.readthedocs.io/)
 
