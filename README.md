@@ -2,6 +2,8 @@
 Script that returns a JSON file of Instagram followers for specified inputs.  
 *The program is slow since Instagrams website has a limited number of requests and therefore it sometimes needs to wait an hour to keep running*  
 
+Requirements: [selenium module](http://selenium-python.readthedocs.io/)
+
 To run the script:   
 -open the Command Prompt  
 -move to the directory of the project  
