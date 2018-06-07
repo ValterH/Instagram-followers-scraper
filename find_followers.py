@@ -42,14 +42,19 @@ for query in queries:
     )
     num = str(follow_ele.text)
     #print(num)
+    ms = False
     ks = False
     dots = False
+    if (num.find('m')>-1):
+        ms = True
     if (num.find('k')>-1):
         ks = True
     if (num.find('.')>-1):
         dots = True
     num = ''.join(filter(str.isdigit, num))
     number = int(num)
+    if ms:
+        number = number * 1000000
     if ks:
         number = number * 1000
         if dots:

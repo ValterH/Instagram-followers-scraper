@@ -1,0 +1,1 @@
+find_followers.py -u "myusername" -p "mypassword123" -q "instagram, selenagomez, cristiano"
