@@ -7,6 +7,11 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
+def writefile(filename, dict):
+    with open(filename, 'w') as file:
+        file.write(json.dumps(dict))
+    return
+
 args = sys.argv
 
 if args[1] == '-u':
@@ -80,6 +85,11 @@ for query in queries:
         else:
             counter = 0
         if counter == 10:
+            print("Writing scrolled followers")
+            sf=[]
+            for ele in List.find_elements_by_tag_name('li'):
+                sf.append(ele.text.split('\n')[0])
+            writefile(query+'.json',sf)
             time.sleep(3600)
         last_num=len(List.find_elements_by_tag_name('li'))
         element = List.find_elements_by_tag_name('li')[-1]
@@ -94,7 +104,10 @@ for query in queries:
 
     followers[query]=tags
 driver.quit()
-with open('followers.json', 'w') as file:
-     file.write(json.dumps(followers))
+
+
+writefile('followers.json',followers)
 
 sys.exit()
+
+
