@@ -91,11 +91,14 @@ for query in queries:
                 sf.append(ele.text.split('\n')[0])
             writefile(query+'.json',sf)
             time.sleep(3600)
+            print("Sleep over")
+            counter=0
         last_num=len(List.find_elements_by_tag_name('li'))
         element = List.find_elements_by_tag_name('li')[-1]
         try:
             element.click()
             element.send_keys(Keys.SPACE)
+            time.sleep(20)
         except Exception as e:
             time.sleep(0.1)
     tags = []
